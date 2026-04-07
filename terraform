@@ -1,8 +1,33 @@
-Hi everyone, and thank you for your time.
-Imagine cutting down the time it takes to go from a cloud infrastructure request to a fully functional, production-ready environment with CI/CD pipelines, from several days to under five minutes. TerraPro does that. It replaces the slow, manual, error-prone process of copy-pasting old code, which leads to inconsistent environments and unpredictable outcomes.
-Manual tasks mean every engineer builds things differently, leading to varying results. This manual process is also prone to human errors, like typos, which can cause significant problems down the line.
-With TerraPro, your team uses a guided process. The front end is simple, while the back-end API does all the heavy lifting—generating code from centralized, approved templates.
-What this means is that even a beginner can create new projects without needing a lot of technical knowledge. TerraPro automatically organizes the files in a standard way, which keeps things consistent. Plus, it builds in security from the start by using your regular GitLab login, and it tracks who made which changes so everything is clear and transparent.
-Finally, TerraPro is built for the enterprise, focusing on stability and security. We’re providing a predictable and standardized way to grow your cloud footprint without the complications.
-I’d love to show you that live demo now. Does anyone have any questions before we get started?"
-This looks solid, Raunak! Since we're working on your presentation, would you like me to help you practice some common
+You are a senior software architect and enterprise delivery reviewer.
+
+I will give you access to a backend application codebase that I have worked on.
+Your task is to review the codebase contextually (architecture, modules, patterns, tooling, purpose) and help me generate professional, appraisal-ready content.
+
+Context:
+- I have worked on multiple applications (4–5 different codebases).
+- These are enterprise backend / platform applications.
+- Technologies may include Python, Java, Spring Boot, Terraform, Kubernetes, migration tools, and cloud-native components.
+- The goal is NOT code changes, but performance documentation.
+
+What I need from you AFTER reviewing this codebase:
+1. A clear summary of **what this application does** (business + technical)
+2. Key **responsibilities and contributions** reflected by this codebase
+3. Well-worded statements suitable for:
+   - Performance Objective Name
+   - Final KPI & Measurement Criteria
+   - Specific Notes to Achieve KPI
+   - Annual Target
+4. Wording must be:
+   - Professional
+   - Enterprise appraisal-friendly
+   - Outcome-focused (delivery, quality, stability, efficiency)
+   - Realistic (no exaggeration)
+
+Important Instructions:
+- Write in neutral corporate language suitable for yearly performance reviews.
+- Avoid mentioning internal file or class names unless needed.
+- Focus on impact: delivery, quality, reliability, scalability, learning, automation.
+- Assume I am a Technical Lead / Senior Developer.
+- Output should be directly copy-paste usable into an appraisal system.
+
+After analysis, present the output in clearly separated sections with headings.
