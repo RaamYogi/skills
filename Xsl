@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+  <xsl:template match="/">
+    <fo:root>
+
+      <!-- Page Layout -->
+      <fo:layout-master-set>
+        <fo:simple-page-master master-name="toc-page"
+          page-width="8.5in" page-height="11in"
+          margin-top="0.5in" margin-bottom="0.5in"
+          margin-left="0.75in" margin-right="0.75in">
+
+          <!-- Header Region -->
+          <fo:region-before extent="0.5in"/>
+          <!-- Footer Region -->
+          <fo:region-after extent="0.4in"/>
+          <!-- Body Region -->
+          <fo:region-body
+            margin-top="0.6in"
+            margin-bottom="0.5in"/>
+        </fo:simple-page-master>
+      </fo:layout-master-set>
+
+      <!-- Page Sequence -->
+      <fo:page-sequence master-reference="toc-page">
+
+        <!-- ═══ HEADER ═══ -->
+        <fo:static-content flow-name="xsl-region-before">
+          <fo:block font-size="8pt" font-family="Arial">
+            <fo:table width="100%" table-layout="fixed">
+              <fo:table-column column-width="proportional-column-width(1)"/>
+              <fo:table-column column-width="proportional-column-width(1)"/>
+              <fo:table-body>
+                <fo:table-row>
+                  <fo:table-cell>
+                    <fo:block text-align="left" font-weight="bold">
+                      UBS Strategic Advisor &#8211; 04/14/2026
+                    </fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell>
+                    <fo:block text-align="right" font-weight="bold">
+                      Prepared For John Doe
+                    </fo:block>
+                  </fo:table-cell>
+                </fo:table-row>
+              </fo:table-body>
+            </fo:table>
+          </fo:block>
+          <!-- Thin separator line under header -->
+          <fo:block border-bottom="0.5pt solid black" margin-top="2pt"/>
+        </fo:static-content>
+
+        <!-- ═══ FOOTER ═══ -->
+        <fo:static-content flow-name="xsl-region-after">
+          <fo:block font-size="7pt" font-style="italic"
+            font-family="Arial" text-align="left" color="#333333">
+            Important information about brokerage and advisory services. As a firm
+            providing wealth management services to clients, UBS Financial Services
+            Inc. offers investment advisory services in
+          </fo:block>
+        </fo:static-content>
+
+        <!-- ═══ BODY ═══ -->
+        <fo:flow flow-name="xsl-region-body">
+
+          <!-- Page Title -->
+          <fo:block
+            font-family="Arial"
+            font-size="26pt"
+            font-weight="normal"
+            color="#1a1a2e"
+            space-after="24pt"
+            border-bottom="1pt solid #cccccc"
+            padding-bottom="6pt">
+            Table of Contents
+          </fo:block>
+
+          <!-- TOC Entries Table -->
+          <fo:table width="100%" table-layout="fixed" font-family="Arial" font-size="10.5pt">
+            <fo:table-column column-width="proportional-column-width(9)"/>
+            <fo:table-column column-width="proportional-column-width(1)"/>
+            <fo:table-body>
+
+              <!-- Macro to repeat per entry -->
+              <!-- Entry 1 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Table of Contents
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">2</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 2 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Investor Profile Review
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">3</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 3 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Your Strategic Advisor Asset Allocation
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">4</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 4 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA The UBS Client Experience
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">6</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 5 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA The Case for Style Diversification
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">7</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 6 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Important Disclosure Information
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">8</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 7 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Glossary
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">11</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 8 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA The Importance of Asset Allocation
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">12</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 9 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Results Comparison
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">13</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 10 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Performance Evaluation Services
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">15</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 11 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA The Case for Geographic Diversification
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">16</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 12 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA The Unpredictability of Market Leadership Style
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">18</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 13 -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt">
+                  <fo:block text-align-last="justify">
+                    SA Application
+                    <fo:leader leader-pattern="dots"
+                      leader-pattern-width="4pt"
+                      rule-thickness="0pt"/>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                  <fo:block text-align="right">21</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+              <!-- Entry 14 - No page number (Advisory Relationship Agreement) -->
+              <fo:table-row>
+                <fo:table-cell padding-bottom="10pt" number-columns-spanned="2">
+                  <fo:block>
+                    Advisory Relationship Agreement
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+
+            </fo:table-body>
+          </fo:table>
+
+        </fo:flow>
+      </fo:page-sequence>
+    </fo:root>
+  </xsl:template>
+
+</xsl:stylesheet>
