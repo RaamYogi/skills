@@ -1,0 +1,1071 @@
+PYTHON / DJANGO / FASTAPI / API INTERVIEW WORKBOOK
+Collected from this chat — hierarchical topic index of questions and coding problems
+
+======================================================================
+1. PYTHON FUNDAMENTALS & CORE CONCEPTS
+======================================================================
+
+1.1 Functions and execution
+- How to get execution time of a function?
+- What is execution time and how can it be measured?
+- How does a function execute in Python?
+- How do default mutable arguments behave?
+- What happens when a list is used as a default function argument?
+- What happens when a local list is created inside every function call?
+- What happens if a variable such as history is referenced without being defined?
+- What is __name__ in Python?
+- What is the purpose of if __name__ == "__main__"?
+
+1.2 Methods
+- What is an instance method?
+- What is a class method?
+- What is a static method?
+- Difference between instance, class and static methods.
+- When should a class method be used?
+- How does the @classmethod decorator work?
+- What is cls?
+- What is self?
+- Can a class method access instance variables?
+- Can a static method access class or instance state?
+
+1.3 OOP
+- What is encapsulation?
+- What is abstraction?
+- What is inheritance?
+- What is polymorphism?
+- What is method overriding?
+- What is method overloading in Python?
+- What is super() and how is it used?
+- What is the difference between class and object?
+- How does Python implement abstraction?
+- What are abstract base classes?
+- How do you use abc and @abstractmethod?
+
+1.4 Data structures
+- List vs tuple.
+- List vs set.
+- List vs dictionary.
+- How does Python list indexing work?
+- How is list memory allocated?
+- Why is Python list called a dynamic array?
+- How does negative indexing work?
+- What does a[-2::-2] return?
+- How does list resizing work internally?
+- How do dictionaries work internally?
+- How do sets achieve fast lookup?
+- When should deque be used instead of list?
+
+1.5 Copying
+- What is assignment/reference binding?
+- What is shallow copy?
+- What is deep copy?
+- Difference between =, copy.copy(), copy.deepcopy(), list.copy() and slicing.
+- What happens to nested objects during shallow copy?
+- When should deep copy be avoided?
+
+======================================================================
+2. PYTHON CODING PROBLEMS
+======================================================================
+
+2.1 String and character problems
+- Convert "communication" into a dictionary containing character frequencies.
+- Count vowels and consonants in a string.
+- Return vowel/consonant counts as:
+  {"vowels": 3, "consonants": 4}
+- Count vowels and consonants using Counter.
+- Count unique vowels and consonants.
+- Count characters in "comission".
+- Compress a string, e.g. "aaaccc" -> "a3c3".
+- Compress "aabbbccdaa" -> "a2b3c2d1a2".
+- Implement string compression without using advanced libraries.
+- Compress only when the compressed result is shorter.
+
+2.2 Lists
+- Flatten a nested list.
+- Flatten deeply nested lists using recursion.
+- Flatten using a generator.
+- Flatten using itertools.chain for one level.
+- Flatten using list comprehension for one level.
+- Flatten arbitrary nested iterables.
+- Preserve strings as atomic values while flattening.
+- Explain yield and yield from in a flatten function.
+
+2.3 Integer problems
+- Reverse an integer.
+- Reverse an integer without converting it to a string.
+- Handle negative integers while reversing.
+- Handle leading zeros after reversal.
+- Handle 32-bit integer overflow.
+
+2.4 Dictionary problems
+- Flatten a nested dictionary.
+- Example:
+  nested = {"a": 1, "b": {"c": 2, "d": 3, "e": 4}, "f": 5}
+- Explain this flattening code line by line:
+  for k, v in d.items():
+      new_key = f"{parent_key}{sep}{k}" if parent_key else k
+      if isinstance(v, dict):
+          items.update(flatten_dict(v, new_key, sep=sep))
+      else:
+          items[new_key] = v
+- Convert nested structures to flat dictionaries.
+- Count vowels/consonants and return the result as a dictionary.
+
+2.5 Slicing/output prediction
+- Predict output of:
+  a = [3,98,67,45,89,42,21,22]
+  a[-2::-2]
+- Predict output of:
+  a = [3,98,67,45,89,42,21,22]
+  b = a
+  b += [2]
+  print(a)
+  print(b)
+- Predict output of a function using a mutable default list.
+- Predict output when a fresh local list is created on every call.
+
+======================================================================
+3. DECORATORS
+======================================================================
+
+- What is a decorator in Python?
+- Why are decorators used?
+- How does @decorator syntax work?
+- What does @my_decorator mean internally?
+- How do decorators accept *args and **kwargs?
+- How do decorators return the original function's result?
+- How do parameterized decorators work?
+- How do you implement a logging decorator?
+- How do you implement an authentication decorator?
+- How do you implement an execution-time decorator?
+- What is functools.wraps?
+- Why should functools.wraps be used in decorators?
+- What is a class-based decorator?
+- How are decorators used in Django?
+- How are decorators used for authentication, authorization, caching and logging?
+
+======================================================================
+4. GENERATORS & ITERATORS
+======================================================================
+
+- What is a generator?
+- What is the difference between a generator function and a normal function?
+- What is yield?
+- What is yield from?
+- Generator vs list.
+- Generator expression vs list comprehension.
+- Why are generators memory efficient?
+- What happens when next() is called?
+- What is StopIteration?
+- Can a generator be iterated more than once?
+- How are generators useful for large files/data?
+- How can a generator flatten a nested list?
+- What are the limitations of recursive generators?
+
+======================================================================
+5. MEMORY MANAGEMENT & ALLOCATION
+======================================================================
+
+- How does Python memory management work?
+- What is Python's private heap?
+- What is reference counting?
+- What happens when reference count becomes zero?
+- What is garbage collection?
+- Why is garbage collection required if Python has reference counting?
+- How does Python handle circular references?
+- What is gc.collect()?
+- What is PyMalloc?
+- What are memory pools/arenas used for?
+- How are small objects allocated?
+- What is object interning?
+- What is integer caching?
+- What is weakref?
+- What is a memory leak in Python?
+- How can memory usage be monitored?
+- What is tracemalloc?
+- What does sys.getsizeof() measure?
+- How can generators reduce memory usage?
+- How does __slots__ reduce object memory usage?
+- Stack vs heap in the context of Python execution.
+- How are objects and references represented in memory?
+- How does list memory allocation work?
+- Why does a list have extra capacity?
+- How does list resizing improve append performance?
+
+======================================================================
+6. PERFORMANCE OPTIMIZATION
+======================================================================
+
+- How do you optimize Python code?
+- Why are built-in functions often faster than Python loops?
+- List comprehension vs for loop.
+- Generator vs list for large data.
+- Set/dict lookup vs list lookup.
+- Why use deque for operations at both ends?
+- Why use NumPy for numerical operations?
+- What is vectorization?
+- When should threading be used?
+- When should multiprocessing be used?
+- When should asyncio be used?
+- What is caching/memoization?
+- How does functools.lru_cache work?
+- How do you optimize string concatenation?
+- Why use ''.join()?
+- What is lazy loading?
+- What is profiling?
+- Difference between timeit and cProfile.
+- How do you find bottlenecks before optimizing?
+- What is algorithmic optimization?
+- How can __slots__ improve memory performance?
+- When might PyPy help?
+- When would Cython/C extensions be considered?
+
+======================================================================
+7. CONCURRENCY, THREADING & MULTIPROCESSING
+======================================================================
+
+- What is concurrency?
+- What is parallelism?
+- Threading vs multiprocessing.
+- What is the GIL?
+- Why does the GIL matter for CPU-bound Python code?
+- Why can threads still help with I/O-bound work?
+- How does multiprocessing bypass the GIL?
+- What is a process?
+- What is a thread?
+- How do processes communicate?
+- What is a race condition?
+- What is synchronization?
+- What is a lock?
+- What is RLock?
+- What is Semaphore?
+- What is Event?
+- What is Condition?
+- What is a deadlock?
+- How can deadlocks be avoided?
+- What is a thread-safe operation?
+- How do you synchronize shared state?
+- What is concurrent.futures?
+- ThreadPoolExecutor vs ProcessPoolExecutor.
+- When should multiprocessing.Pool be used?
+- How does task scheduling affect performance?
+
+======================================================================
+8. ASYNCHRONOUS PROGRAMMING
+======================================================================
+
+- What is asynchronous programming in Python?
+- How does async programming allow concurrent tasks without blocking?
+- What is async?
+- What is await?
+- What is a coroutine?
+- What is an event loop?
+- What is asyncio?
+- Async programming vs synchronous programming.
+- Asyncio vs threading.
+- Asyncio vs multiprocessing.
+- When is async programming useful?
+- Why is async particularly useful for I/O-bound operations?
+- What happens when an async function reaches await?
+- What is cooperative multitasking?
+- What is blocking code inside async code?
+- Why should blocking operations be avoided in an event loop?
+- How do you run multiple coroutines concurrently?
+- What is asyncio.gather()?
+- What is create_task()?
+- What is cancellation in asyncio?
+- How do you handle exceptions in async tasks?
+- How do you combine async and synchronous code?
+- What is an async context manager?
+- What is an async iterator?
+
+======================================================================
+9. NUMPY
+======================================================================
+
+- What is NumPy?
+- Why is a NumPy array faster than a Python list for numerical operations?
+- NumPy array vs Python list.
+- What is ndarray?
+- How do you create a NumPy array?
+- How do you create zeros/ones arrays?
+- How do you create an identity matrix?
+- What is vectorization?
+- What is broadcasting?
+- What is array shape?
+- What is dtype?
+- Difference between reshape and resize.
+- What is slicing in NumPy?
+- What is a view vs copy in NumPy?
+- How do NumPy arrays save memory?
+- How do you perform matrix operations?
+- How do you calculate mean, standard deviation and sum?
+- How do you handle NaN values?
+- When should NumPy be preferred over lists?
+
+======================================================================
+10. PANDAS
+======================================================================
+
+- What is Pandas?
+- What is a Series?
+- What is a DataFrame?
+- Pandas vs NumPy.
+- How do you create a DataFrame?
+- How do you inspect a DataFrame?
+- What are head(), tail(), info(), describe()?
+- How do you filter rows?
+- Difference between loc and iloc.
+- How do you handle missing values?
+- Difference between dropna() and fillna().
+- How do you group data using groupby()?
+- How do you calculate aggregate values?
+- How do you merge DataFrames?
+- merge vs concat vs join.
+- How do you sort a DataFrame?
+- How do you remove duplicates?
+- How do you rename columns?
+- How do you convert data types?
+- How do you read CSV/Excel data?
+- How do you optimize Pandas memory usage?
+- How do you process large datasets efficiently?
+
+======================================================================
+11. DJANGO FUNDAMENTALS
+======================================================================
+
+- What is Django?
+- Explain Django architecture.
+- What is MVT?
+- Difference between MVC and MVT.
+- What is a Django app?
+- How do you scale a Django app?
+- What are Django models?
+- What is a model field?
+- What are migrations?
+- makemigrations vs migrate.
+- What is the Django ORM?
+- What is QuerySet?
+- What is lazy evaluation in QuerySets?
+- What is select_related()?
+- What is prefetch_related()?
+- What is the N+1 query problem?
+- How do you optimize Django database queries?
+- What is F() expression?
+- What is Q() object?
+- What are model managers?
+- What are model methods?
+- What are model properties?
+- What are model Meta options?
+- How do you define indexes?
+- How do you enforce database constraints?
+
+======================================================================
+12. DJANGO MODELS & DATABASE RELATIONSHIPS
+======================================================================
+
+- What is a Django model?
+- How do you create a model?
+- How do you give a Django model/table a different database table name?
+- Example:
+  class Student(models.Model):
+      ...
+  How can the database table have a different name?
+- What is Meta.db_table?
+- What is ForeignKey?
+- What is OneToOneField?
+- What is ManyToManyField?
+- Explain many-to-many relationships.
+- How does Django create many-to-many tables?
+- What is through= in ManyToManyField?
+- What is on_delete?
+- CASCADE vs PROTECT vs SET_NULL vs SET_DEFAULT.
+- How do you query related objects?
+- What is related_name?
+- How do you avoid N+1 queries?
+- How do database indexes improve performance?
+- What is transaction.atomic()?
+- How do you handle concurrent database updates?
+
+======================================================================
+13. DJANGO CONTEXT / TEMPLATES
+======================================================================
+
+- What is context in Django?
+- How is context passed from a view to a template?
+- What is a context dictionary?
+- What is RequestContext?
+- How do template context processors work?
+- What is a template context processor?
+- How do you pass model/queryset data to templates?
+- What is template inheritance?
+- What are custom template filters?
+- What are custom template tags?
+
+======================================================================
+14. DJANGO AUTHENTICATION & AUTHORIZATION
+======================================================================
+
+- How does authentication work in Django?
+- How do you implement authentication using a custom user model?
+- How do you create a custom user model?
+- AbstractUser vs AbstractBaseUser.
+- Why should AUTH_USER_MODEL be configured early?
+- How do you authenticate users?
+- How do sessions work?
+- What is permission vs authentication?
+- How do you implement role-based access control?
+- How do you restrict views to authenticated users?
+- What is login_required?
+- How do you implement custom permissions?
+- How do you protect APIs?
+- How do you implement JWT authentication?
+- Session authentication vs token/JWT authentication.
+- How do you secure password storage?
+- How do you implement password reset?
+- How do you implement email OTP authentication?
+
+======================================================================
+15. DJANGO SECURITY
+======================================================================
+
+- How do you secure a Django application?
+- What is CSRF protection?
+- What is XSS protection?
+- What is SQL injection and how does Django ORM help prevent it?
+- What is clickjacking protection?
+- How do you securely store secrets?
+- Why should DEBUG=False be used in production?
+- How do you configure ALLOWED_HOSTS?
+- How do you secure cookies?
+- What are Secure, HttpOnly and SameSite cookie settings?
+- How do you implement HTTPS?
+- How do you prevent brute-force attacks?
+- How do you rate-limit APIs?
+- How do you validate uploaded files?
+- How do you protect sensitive endpoints?
+- How do you safely log security events?
+
+======================================================================
+16. DJANGO SIGNALS
+======================================================================
+
+- What are Django signals?
+- What is post_save?
+- What is pre_save?
+- What is post_delete?
+- What is pre_delete?
+- When should signals be used?
+- When should signals NOT be used?
+- How do you register signals safely?
+- Why use dispatch_uid?
+- How can duplicate signal registration happen?
+- How do signals affect performance?
+- How can signals cause unexpected side effects?
+- How do you securely handle signals?
+- Should emails/external API calls be made directly inside signals?
+- How can Celery be used with signals?
+- How do you test signals?
+- How do you avoid recursive signal execution?
+- How do you prevent sensitive information from being logged by signals?
+
+======================================================================
+17. DJANGO FILE UPLOADS
+======================================================================
+
+- How are file uploads handled in Django?
+- How do you upload files through a form?
+- How do you upload files through an API?
+- What are MEDIA_ROOT and MEDIA_URL?
+- How do you validate file size?
+- How do you validate file extension/content type?
+- How do you securely store uploaded files?
+- Local storage vs S3/object storage.
+- How do you prevent malicious file uploads?
+- How do you generate unique filenames?
+- How do you serve uploaded files in production?
+- How do you upload files asynchronously?
+- How do you handle large files?
+
+======================================================================
+18. DJANGO PERFORMANCE & SCALING
+======================================================================
+
+- How do you improve Django application performance?
+- How do you identify slow database queries?
+- How do you optimize ORM queries?
+- select_related vs prefetch_related.
+- How do database indexes improve performance?
+- What is caching in Django?
+- Django cache backends.
+- Redis caching.
+- Per-view caching.
+- Low-level caching.
+- Template caching.
+- How do you scale Django horizontally?
+- What is load balancing?
+- How do you use multiple application servers?
+- What is connection pooling?
+- How do you handle large traffic?
+- How do Celery and Redis/RabbitMQ help?
+- How do you optimize static/media delivery?
+- How do you use CDN?
+- How do you optimize Gunicorn/Uvicorn workers?
+- How do you monitor Django production performance?
+
+======================================================================
+19. DJANGO REST API / DRF
+======================================================================
+
+- Have you used REST API in a project? Give examples.
+- What is REST?
+- What are REST principles?
+- What are HTTP methods?
+- GET vs POST vs PUT vs PATCH vs DELETE.
+- PUT vs PATCH.
+- What are HTTP status codes?
+- What is idempotency?
+- What is a serializer?
+- Serializer vs ModelSerializer.
+- What is APIView?
+- What is GenericAPIView?
+- What are generic views?
+- What is ViewSet?
+- What is ModelViewSet?
+- Router vs explicit URL patterns.
+- How do you validate API input?
+- How do you handle API exceptions?
+- How do you implement pagination?
+- How do you implement filtering/searching/ordering?
+- How do you implement authentication?
+- How do you implement authorization?
+- How do you rate-limit an API?
+- What is throttling in DRF?
+- How do you version APIs?
+- How do you document APIs?
+- How do you test REST APIs?
+- How do you handle API errors consistently?
+- How do you secure REST APIs?
+- How do you implement file uploads through REST APIs?
+
+======================================================================
+20. API RATE LIMITING
+======================================================================
+
+- What is API rate limiting?
+- Why is rate limiting required?
+- What is HTTP 429?
+- How do you rate-limit by user?
+- How do you rate-limit by IP?
+- How do you rate-limit by API token?
+- Fixed-window algorithm.
+- Sliding-window algorithm.
+- Token-bucket algorithm.
+- Leaky-bucket algorithm.
+- How can Redis be used for distributed rate limiting?
+- How can an API gateway implement rate limiting?
+- How do DRF throttling classes work?
+- How can FastAPI implement rate limiting?
+- How should rate limiting work across multiple application servers?
+
+======================================================================
+21. POST APIs
+======================================================================
+
+- How do you send a POST request in Python?
+- How do you use requests.post()?
+- How do you send JSON in a POST request?
+- How do you implement a POST endpoint in Django REST Framework?
+- How do you validate POST data with serializers?
+- How do you return HTTP 201?
+- How do you implement POST in FastAPI?
+- How does Pydantic validate POST request bodies?
+- How do you test a POST endpoint?
+- How do you handle duplicate POST requests/idempotency?
+- How do you handle file uploads using POST?
+
+======================================================================
+22. FASTAPI
+======================================================================
+
+- What is FastAPI?
+- Why is FastAPI considered fast?
+- FastAPI vs Django.
+- FastAPI vs Flask.
+- What is ASGI?
+- What is Pydantic?
+- How does FastAPI validate request data?
+- What is dependency injection in FastAPI?
+- What are path/query/body parameters?
+- How do you create GET/POST/PUT/PATCH/DELETE endpoints?
+- How do you implement authentication in FastAPI?
+- How do you implement JWT authentication?
+- How do you implement middleware?
+- How do you implement exception handlers?
+- How do you implement rate limiting?
+- How do you handle file uploads?
+- How do you connect FastAPI to PostgreSQL?
+- SQLAlchemy vs other database approaches.
+- How do you implement async database operations?
+- How do you test FastAPI APIs?
+- How do you generate OpenAPI/Swagger documentation?
+- What is BackgroundTasks?
+- How do you deploy FastAPI?
+
+======================================================================
+23. FASTAPI ASYNC PROGRAMMING
+======================================================================
+
+- Why is asynchronous programming important in FastAPI?
+- How does async def work in FastAPI?
+- What happens when an endpoint uses await?
+- How does the event loop handle concurrent requests?
+- What is an async endpoint?
+- What is a synchronous endpoint?
+- When should a FastAPI endpoint be synchronous?
+- When should it be asynchronous?
+- What happens if blocking code is executed inside async def?
+- How do you call an external API asynchronously?
+- How do you run multiple external API calls concurrently?
+- asyncio.gather() in FastAPI.
+- Async database drivers.
+- Async HTTP clients.
+- How do you handle timeouts?
+- How do you handle cancellation?
+- How do you manage background tasks?
+- Async FastAPI vs threaded Flask/Django.
+
+======================================================================
+24. UVICORN / ASGI
+======================================================================
+
+- What is Uvicorn?
+- What is ASGI?
+- Why is Uvicorn used with FastAPI?
+- How do you run a FastAPI app with Uvicorn?
+- What does:
+  uvicorn main:app --reload
+  mean?
+- What does --reload do?
+- Uvicorn vs Gunicorn.
+- How can Gunicorn and Uvicorn be used together?
+- How do you run Django ASGI with Uvicorn?
+- WSGI vs ASGI.
+- Why is ASGI useful for asynchronous applications?
+- What are workers?
+- How do you configure production server processes?
+
+======================================================================
+25. FLASK API
+======================================================================
+
+- How do you create a Flask API?
+- How do you define GET and POST endpoints?
+- How do you test a Flask API?
+- Flask vs Django.
+- Flask vs FastAPI.
+- How do you validate Flask API input?
+- How do you authenticate Flask APIs?
+- How do you handle exceptions?
+- How do you implement rate limiting?
+- How do you deploy Flask APIs?
+
+======================================================================
+26. DOCKER + DJANGO / FASTAPI
+======================================================================
+
+- How did you implement Docker in a Django application?
+- Why use Docker for Django?
+- What is a Dockerfile?
+- What is docker-compose?
+- How do you containerize Django?
+- How do you containerize FastAPI?
+- How do you run PostgreSQL in Docker?
+- How do you configure environment variables?
+- How do you handle migrations in Docker?
+- How do you serve static files in Docker?
+- How do you use Gunicorn/Uvicorn in Docker?
+- How do you scale containers?
+- How do containers communicate?
+- How do you persist database data?
+- How do you secure Docker images?
+- How do you optimize Docker image size?
+
+======================================================================
+27. LOGGING & EXCEPTION HANDLING
+======================================================================
+
+- What is exception handling in Python?
+- try/except/else/finally.
+- What is the difference between Exception and BaseException?
+- How do you create custom exceptions?
+- How should exceptions be handled in APIs?
+- How do you avoid swallowing exceptions?
+- What is logging?
+- Why use logging instead of print()?
+- Logging levels: DEBUG, INFO, WARNING, ERROR, CRITICAL.
+- How do you configure Python logging?
+- How do you configure Django logging?
+- How do you log exceptions with stack traces?
+- How do you prevent sensitive information from appearing in logs?
+- How do you implement structured logging?
+- How do you monitor application errors?
+
+======================================================================
+28. API DESIGN / SYSTEM DESIGN QUESTIONS
+======================================================================
+
+- Design a scalable REST API.
+- How would you handle millions of API requests?
+- How would you design authentication for a large API?
+- How would you implement distributed rate limiting?
+- How would you cache frequently requested API data?
+- How would you handle database bottlenecks?
+- How would you design file upload/download architecture?
+- How would you handle background jobs?
+- How would you design retry mechanisms?
+- What is exponential backoff?
+- How do you make APIs idempotent?
+- How do you handle API versioning?
+- How do you implement health checks?
+- How do you monitor API latency?
+- How do you handle failures between microservices?
+- What is a circuit breaker?
+- What is a message queue?
+- Redis vs RabbitMQ/Kafka use cases.
+- How would you scale a Django/FastAPI application horizontally?
+
+======================================================================
+29. PROJECT-BASED INTERVIEW QUESTIONS
+======================================================================
+
+- Have you used REST API in any project? Give examples.
+- Explain one real API you developed end-to-end.
+- How did you implement authentication in Django for a custom user?
+- Why did you choose a custom user model?
+- How did you implement authorization/roles?
+- How did you implement Docker in your Django application?
+- How did you deploy your Django application?
+- Which web server did you use?
+- How did you configure PostgreSQL/MySQL?
+- How did you optimize slow APIs?
+- How did you identify slow database queries?
+- How did you implement caching?
+- How did you implement background processing?
+- How did you handle email notifications?
+- How did you handle file uploads?
+- How did you secure uploaded files?
+- How did you implement API rate limiting?
+- How did you implement logging?
+- How did you monitor production errors?
+- How did you handle API failures?
+- How did you implement pagination?
+- How did you handle large datasets?
+- How did you implement asynchronous processing?
+- Why did you choose Django vs FastAPI?
+- Why did you choose REST vs another API style?
+- How did you test your APIs?
+- How did you write unit and integration tests?
+- How did you handle database transactions?
+- How did you handle concurrent requests?
+- How did you scale your application?
+
+======================================================================
+30. HIGH-PRIORITY MNC INTERVIEW REVISION TOPICS
+======================================================================
+
+Priority 1 — Must Know
+- Python OOP
+- Decorators
+- Generators
+- List/dict/set/tuple internals
+- Shallow vs deep copy
+- Mutable default arguments
+- Memory management
+- Reference counting
+- Garbage collection
+- GIL
+- Threading
+- Multiprocessing
+- Asyncio
+- Exception handling
+- Logging
+- Performance optimization
+
+Priority 2 — Django
+- MVT architecture
+- Models and ORM
+- Relationships
+- Query optimization
+- select_related/prefetch_related
+- Authentication/custom user
+- Authorization/permissions
+- Signals
+- Security
+- File uploads
+- Caching
+- Scaling
+- REST APIs
+- Rate limiting
+
+Priority 3 — FastAPI
+- ASGI
+- Uvicorn
+- Pydantic
+- Dependency injection
+- Async endpoints
+- Authentication/JWT
+- Middleware
+- Exception handling
+- Background tasks
+- Rate limiting
+- API testing
+- Deployment
+
+Priority 4 — Data
+- NumPy arrays
+- Vectorization
+- Broadcasting
+- Pandas Series/DataFrame
+- loc/iloc
+- groupby
+- merge/join/concat
+- Missing values
+- Large dataset optimization
+
+Priority 5 — DevOps/System Design
+- Docker
+- Gunicorn/Uvicorn
+- Redis
+- Celery
+- PostgreSQL
+- Nginx
+- Load balancing
+- Caching
+- API gateway
+- Rate limiting
+- Monitoring
+- Horizontal scaling
+
+======================================================================
+31. QUICK CODING PRACTICE SET
+======================================================================
+
+1. Reverse an integer.
+2. Count vowels and consonants.
+3. Character frequency using Counter.
+4. Convert character frequency to a dictionary.
+5. Flatten a nested list.
+6. Flatten a nested dictionary.
+7. Compress a string.
+8. Find duplicate characters.
+9. Find the first non-repeating character.
+10. Find duplicate numbers in a list.
+11. Remove duplicates while preserving order.
+12. Find the second-largest number.
+13. Find missing number from 1..N.
+14. Check palindrome.
+15. Check anagram.
+16. Count words in a sentence.
+17. Find frequency of each word.
+18. Find common elements between two lists.
+19. Merge two dictionaries.
+20. Sort a dictionary by value.
+21. Implement a decorator for execution time.
+22. Implement a decorator for authentication.
+23. Implement a decorator for logging.
+24. Implement a generator for Fibonacci numbers.
+25. Implement a generator to read a large file.
+26. Implement a custom iterator.
+27. Implement a simple cache.
+28. Implement a simple rate limiter.
+29. Implement a thread-safe counter.
+30. Implement producer-consumer using threading.
+31. Implement multiprocessing for CPU-heavy work.
+32. Run multiple async tasks concurrently.
+33. Implement async API calls using asyncio.
+34. Create a Django model with relationships.
+35. Write a Django ORM query to filter users by age.
+36. Optimize an N+1 Django query.
+37. Create a Django POST API.
+38. Create a FastAPI POST API.
+39. Add JWT authentication to an API.
+40. Add API rate limiting.
+41. Add Docker support to a Django/FastAPI project.
+42. Add logging and exception handling.
+43. Write API unit tests.
+44. Upload and validate a file through an API.
+45. Design a scalable API.
+
+======================================================================
+32. IMPORTANT CODE SNIPPETS FROM THIS CHAT
+======================================================================
+
+A. Mutable default argument:
+def process_item(item, history=[]):
+    history.append(item)
+    return history
+
+print(process_item("apple"))
+print(process_item("banana"))
+print(process_item("cherry"))
+
+B. Correct local-list version:
+def process_item(item):
+    history = []
+    history.append(item)
+    return history
+
+print(process_item("apple"))
+print(process_item("banana"))
+print(process_item("cherry"))
+
+C. Undefined variable example:
+def process_item(item):
+    history.append(item)
+    return history
+
+history = []
+
+D. List aliasing:
+a = [3,98,67,45,89,42,21,22]
+b = a
+b += [2]
+print(a)
+print(b)
+
+E. List slicing:
+a = [3,98,67,45,89,42,21,22]
+print(a[-2::-2])
+
+F. Character frequency:
+from collections import Counter
+s = "communication"
+freq = Counter(s)
+
+G. Vowel/consonant counting:
+from collections import Counter
+
+s = "comission"
+vowels = "aeiou"
+
+freq = Counter(s)
+vowel_count = 0
+consonant_count = 0
+
+for ch, count in freq.items():
+    if ch in vowels:
+        vowel_count += count
+    else:
+        consonant_count += count
+
+result = {"vowels": vowel_count, "consonants": consonant_count}
+print(result)
+
+H. Nested dictionary flattening:
+def flatten_dict(d, parent_key="", sep="."):
+    items = {}
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.update(flatten_dict(v, new_key, sep=sep))
+        else:
+            items[new_key] = v
+    return items
+
+I. Nested list flattening:
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+J. Generator-based flattening:
+from collections.abc import Iterable
+
+def flatten(lst):
+    for item in lst:
+        if isinstance(item, Iterable) and not isinstance(item, (str, bytes)):
+            yield from flatten(item)
+        else:
+            yield item
+
+K. String compression:
+def compress_string(s):
+    if not s:
+        return ""
+
+    result = []
+    count = 1
+
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            count += 1
+        else:
+            result.append(s[i - 1] + str(count))
+            count = 1
+
+    result.append(s[-1] + str(count))
+    return "".join(result)
+
+L. Reverse integer mathematically:
+def reverse_int_math(n):
+    sign = -1 if n < 0 else 1
+    n = abs(n)
+
+    reversed_num = 0
+
+    while n != 0:
+        digit = n % 10
+        reversed_num = reversed_num * 10 + digit
+        n //= 10
+
+    return reversed_num * sign
+
+M. Class method:
+class Student:
+    school_name = "ABC High School"
+
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def change_school(cls, new_name):
+        cls.school_name = new_name
+
+N. Decorator:
+def my_decorator(func):
+    def wrapper():
+        print("Before function runs")
+        func()
+        print("After function runs")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello, World!")
+
+say_hello()
+
+O. Execution-time decorator:
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} executed in {end-start:.4f} sec")
+        return result
+    return wrapper
+
+P. Generator:
+def numbers():
+    for i in range(5):
+        yield i
+
+Q. Uvicorn:
+uvicorn main:app --relo
